@@ -22,9 +22,20 @@ docker-oracle
 Oracle Express Edition 11g Release 2 on Ubuntu 16.04 LTS,
 based upon [wnameless/docker-oracle-xe-11g](https://github.com/wnameless/docker-oracle-xe-11g).
 
-### Installation (with Ubuntu 16.04)
+### Build
 ```
-docker pull hydromatic/oracle
+$ cd docker-oracle
+$ docker build -t "hydromatic:oracle" .
+Sending build context to Docker daemon 95.23 kB
+Step 1/3 : FROM wnameless/oracle-xe-11g
+---> 51fad6f11394
+Step 2/3 : MAINTAINER Julian Hyde <jhyde@apache.org>
+---> Using cache
+---> 2443763d2b28
+Step 3/3 : ADD docker-entrypoint-initdb.d /docker-entrypoint-initdb.d
+---> 89a0953bfbff
+Removing intermediate container b1287949d2ee
+Successfully built 89a0953bfbff
 ```
 
 Run with 22 and 1521 ports opened:
